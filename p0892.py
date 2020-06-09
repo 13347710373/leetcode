@@ -34,13 +34,6 @@
 0 <= grid[i][j] <= 50
 """
 
-"""
-2020-02-35 07:00:39
-执行用时 :68 ms, 在所有 Python 提交中击败了96.88%的用户
-内存消耗 :12.7 MB, 在所有 Python 提交中击败了9.09%的用户
-"""
-
-
 def surfaceArea(grid):
     """
     :type grid: List[List[int]]
@@ -53,13 +46,18 @@ def surfaceArea(grid):
             num+=(l*6)
             num -= 2*(l-1) if l>0 else 0
             if i>0:num-= 2*lst[i] if lst[i]<lst[i-1] else 2*lst[i-1]
-        
+
         if j>0:
             for k in range(0,len(grid[j])):
                 num-= 2*grid[j][k] if grid[j][k]<grid[j-1][k] else 2*grid[j-1][k]
 
     return num
 
+"""
+2020-02-35 07:00:39
+执行用时 :68 ms, 在所有 Python 提交中击败了96.88%的用户
+内存消耗 :12.7 MB, 在所有 Python 提交中击败了9.09%的用户
+"""
 t =[[2,2,2],[2,1,2],[2,2,2]]
 s = surfaceArea(t)
 print(s)
